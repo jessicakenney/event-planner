@@ -70,4 +70,13 @@ public class EventTest {
     Double expected = total - discount;
     assertEquals(expected, testEvent.applyCouponCode("20percentOff"));
   }
+  @Test
+  public void getTotalCost_returnsNewCostDJCoupon_Double(){
+    Event testEvent = new Event ( 50,"apps","wine" ,"DJ");
+    Double sub = 5.00 + 3.00 + 10.00 ;
+    Double total = sub * testEvent.getNumPeople();
+    Double discount = total * .20;
+    Double expected = total - discount;
+    assertEquals(expected, testEvent.applyCouponCode("freeDJ"));
+  }
 }
