@@ -19,8 +19,8 @@ public class EventTest {
   @Test
   public void newEventMenu_getsFoodOptions_String() throws Exception {
     EventMenu testEventMenu = new EventMenu();
-    String actual[] = testEventMenu.getBeverageOptions();
-    assertEquals("dinner:buffet", actual[2]);
+    String actual[] = testEventMenu.getFoodOptions();
+    assertEquals("dinner:buffet", actual[3]);
   }
   @Test
   public void newTest_getsNumPeople_Integer() throws Exception{
