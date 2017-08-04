@@ -34,7 +34,7 @@ public class Event {
     //Determine base cost on food and beverage options
     baseCostpp = 5.00;
     Map<String, Double> costSheet = new HashMap();
-    costSheet.put("apps", 0.00);
+    costSheet.put("apps", 3.00);
     costSheet.put("brunch", 5.00);
     costSheet.put("NA", 0.00);
     baseCostpp += costSheet.get(foodChoice);
