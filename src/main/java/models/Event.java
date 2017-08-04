@@ -31,11 +31,15 @@ public class Event {
   public Double getCostPerPerson (){
     double baseCostpp;
     //foodOptions {"apps","brunch","dessert-only","dinner:buffet","dinner:sit-down"};
+    //beverageOptions = {"nonalcoholic","wine","beer","cocktails"};
     //Determine base cost on food and beverage options
     baseCostpp = 5.00;
     Map<String, Double> costSheet = new HashMap();
     costSheet.put("apps", 3.00);
-    costSheet.put("brunch", 5.00);
+    costSheet.put("brunch", 10.00);
+    costSheet.put("dessert-only", 8.00);
+    costSheet.put("dinner:buffet", 15.00);
+    costSheet.put("dinner:sit-down", 25.00);
     costSheet.put("NA", 0.00);
     baseCostpp += costSheet.get(foodChoice);
 
