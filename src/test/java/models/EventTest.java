@@ -68,8 +68,9 @@ public class EventTest {
     EventMenu testEventMenu = new EventMenu();
     Double expectedfood = 8.00;
     Double expectedbev = 15.00;
+    String [] actuals = testEvent.getBeverageChoices();
     assertEquals(expectedfood, testEventMenu.getCostSheet().get(testEvent.getFoodChoice()));
-    assertEquals(expectedbev, testEventMenu.getCostSheet().get(testEvent.getBeverageChoices()));
+    assertEquals(expectedbev,testEventMenu.getCostSheet().get(actuals[0]));
   }
   @Test
   public void getCostPerPerson_returnsBaseCostPP_Double(){
