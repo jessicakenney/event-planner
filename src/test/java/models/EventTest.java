@@ -71,12 +71,19 @@ public class EventTest {
     assertEquals(expected, testEvent.applyCouponCode("20percentOff"));
   }
   @Test
-  public void getTotalCost_returnsNewCostDJCoupon_Double(){
+  public void getTotalCost_freeDJCoupon_Double(){
     Event testEvent = new Event ( 50,"apps","wine" ,"DJ");
     Double sub = 5.00 + 3.00 + 10.00 ;
     Double total = sub * testEvent.getNumPeople();
-    Double discount = total * .20;
-    Double expected = total - discount;
+    Double expected = total;
+    assertEquals(expected, testEvent.applyCouponCode("freeDJ"));
+  }
+  @Test
+  public void getTotalCost_freeDJCouponWithNoDJChoice_Double(){
+    Event testEvent = new Event ( 50,"apps","wine" ,"harpist");
+    Double sub = 5.00 + 3.00 + 10.00;
+    Double total = sub * testEvent.getNumPeople() + 275.00;
+    Double expected = total;
     assertEquals(expected, testEvent.applyCouponCode("freeDJ"));
   }
 }
