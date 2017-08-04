@@ -40,8 +40,13 @@ public class Event {
     costSheet.put("dessert-only", 8.00);
     costSheet.put("dinner:buffet", 15.00);
     costSheet.put("dinner:sit-down", 25.00);
+    costSheet.put("nonalcoholic", 5.00);
+    costSheet.put("wine", 10.00);
+    costSheet.put("beer", 8.00);
+    costSheet.put("cocktails", 15.00);
     costSheet.put("NA", 0.00);
     baseCostpp += costSheet.get(foodChoice);
+    baseCostpp += costSheet.get(beverageChoice);
 
     return baseCostpp * getNumPeople();
   }

@@ -52,7 +52,7 @@ public class EventTest {
   @Test
   public void getCostPerPerson_returnsCostPPWithFoodAndBev_Double(){
     Event testEvent = new Event (1,"apps","wine","none");
-    Double baseCost = 5.00 + 3.00 + 5.00;
+    Double baseCost = 5.00 + 3.00 + 10.00;
     Double expected = baseCost * testEvent.getNumPeople();
     assertEquals(expected, testEvent.getCostPerPerson());
   }
