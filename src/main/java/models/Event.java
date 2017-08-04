@@ -18,24 +18,6 @@ public class Event {
     this.beverageChoice = beverageChoice;
     this.entertainmentChoice = entertainmentChoice;
   }
-//  public Map<String,Double> getCostSheet () {
-//    costSheet.put("apps", 3.00);
-//    costSheet.put("brunch", 10.00);
-//    costSheet.put("dessert-only", 8.00);
-//    costSheet.put("dinner:buffet", 15.00);
-//    costSheet.put("dinner:sit-down", 25.00);
-//    costSheet.put("nonalcoholic", 5.00);
-//    costSheet.put("wine", 10.00);
-//    costSheet.put("beer", 8.00);
-//    costSheet.put("cocktails", 15.00);
-//    costSheet.put("NA", 0.00);
-//    costSheet.put("none", 0.00);
-//    costSheet.put("DJ", 300.00);
-//    costSheet.put("live-band", 500.00);
-//    costSheet.put("harpist", 275.00);
-//    costSheet.put("magician", 250.00);
-//    return costSheet;
-//  }
 
   public Integer getNumPeople () {
     return numPeople;
@@ -64,8 +46,8 @@ public class Event {
    return  subTotal;
   }
   public Double applyCouponCode(String couponCode) {
-   double total = getTotalCost();
-   double discountedTotal;
+   Double total = getTotalCost();
+   Double discountedTotal;
    if (couponCode.equals( "20percentOff")) {
      discountedTotal =  total - (total * .20);
    } else if (couponCode.equals("freeDJ") && getEntertainmentChoice().equals("DJ")) {

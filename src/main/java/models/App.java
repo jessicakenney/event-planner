@@ -11,7 +11,7 @@ public class App {
     BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
 
     System.out.println("\n==========Event Planner Cost Estimator==========");
-    System.out.println("\nPlease enter number of people for your event : ");
+    System.out.println("Please enter number of people for your event : ");
     try {
       Integer inputNumPeople = Integer.parseInt(bufferedReader.readLine());
       System.out.println("\nEnter your food selection for the event : ");
@@ -33,6 +33,17 @@ public class App {
       }
       String inputEntertainmentChoice = bufferedReader.readLine();
       Event newEvent = new Event(inputNumPeople,inputFoodChoice,inputBeverageChoice,inputEntertainmentChoice);
+      System.out.println("\n==========Event Summary==========");
+      System.out.println(String.format("Number of People\t\t:%d people",inputNumPeople));
+      System.out.println(String.format("Food Choice\t\t\t\t:%s",inputFoodChoice));
+      System.out.println(String.format("Beverage Choice\t\t\t:%s",inputBeverageChoice));
+      System.out.println(String.format("Entertainment Choice\t:%s",inputEntertainmentChoice));
+      System.out.println("=================================");
+      System.out.println(String.format("SubTotal\t\t:$%.2f",newEvent.getTotalCost()));
+      System.out.println("\nEnter valid couponCode[20percentOff,freeDJ]");
+      String couponCode = bufferedReader.readLine();
+      System.out.println("\n=================================");
+      System.out.println(String.format("Total with discount\t:$%.2f",newEvent.applyCouponCode(couponCode)));
     } catch(IOException e) {
         e.printStackTrace();
     }
