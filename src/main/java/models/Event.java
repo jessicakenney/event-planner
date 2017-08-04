@@ -8,12 +8,31 @@ public class Event {
   private String foodChoice;
   private String beverageChoice;
   private String entertainmentChoice;
+  private Map<String, Double> costSheet = new HashMap();
 
   public Event( Integer numPeople, String foodChoice, String beverageChoice, String entertainmentChoice){
     this.numPeople = numPeople;
     this.foodChoice = foodChoice;
     this.beverageChoice = beverageChoice;
     this.entertainmentChoice = entertainmentChoice;
+  }
+  public Map<String,Double> getCostSheet () {
+    costSheet.put("apps", 3.00);
+    costSheet.put("brunch", 10.00);
+    costSheet.put("dessert-only", 8.00);
+    costSheet.put("dinner:buffet", 15.00);
+    costSheet.put("dinner:sit-down", 25.00);
+    costSheet.put("nonalcoholic", 5.00);
+    costSheet.put("wine", 10.00);
+    costSheet.put("beer", 8.00);
+    costSheet.put("cocktails", 15.00);
+    costSheet.put("NA", 0.00);
+    costSheet.put("none", 0.00);
+    costSheet.put("DJ", 300.00);
+    costSheet.put("live-band", 500.00);
+    costSheet.put("harpist", 275.00);
+    costSheet.put("magician", 250.00);
+    return costSheet;
   }
 
   public Integer getNumPeople () {
@@ -34,32 +53,15 @@ public class Event {
     //beverageOptions = {"nonalcoholic","wine","beer","cocktails"};
     //Determine base cost on food and beverage options
     baseCostpp = 5.00;
-    Map<String, Double> costSheet = new HashMap();
-    costSheet.put("apps", 3.00);
-    costSheet.put("brunch", 10.00);
-    costSheet.put("dessert-only", 8.00);
-    costSheet.put("dinner:buffet", 15.00);
-    costSheet.put("dinner:sit-down", 25.00);
-    costSheet.put("nonalcoholic", 5.00);
-    costSheet.put("wine", 10.00);
-    costSheet.put("beer", 8.00);
-    costSheet.put("cocktails", 15.00);
-    costSheet.put("NA", 0.00);
-    baseCostpp += costSheet.get(foodChoice);
-    baseCostpp += costSheet.get(beverageChoice);
+    baseCostpp += getCostSheet().get(foodChoice);
+    baseCostpp += getCostSheet().get(beverageChoice);
 
     return baseCostpp;
   }
   public Double getTotalCost (){
     Double subTotal;
     //entertainmentOptions = {"none","DJ","live-band","harpist","magician"};
-    Map<String, Double> EntertainmentCostSheet = new HashMap();
-    EntertainmentCostSheet.put("none", 0.00);
-    EntertainmentCostSheet.put("DJ", 300.00);
-    EntertainmentCostSheet.put("live-band", 500.00);
-    EntertainmentCostSheet.put("harpist", 275.00);
-    EntertainmentCostSheet.put("magician", 250.00);
-    subTotal =  getCostPerPerson() * getNumPeople() + EntertainmentCostSheet.get(entertainmentChoice) ;
+    subTotal =  getCostPerPerson() * getNumPeople() + getCostSheet().get(entertainmentChoice) ;
    return  subTotal;
   }
   public Double applyCouponCode(String couponCode) {
