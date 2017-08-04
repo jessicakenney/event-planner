@@ -45,16 +45,20 @@ public class EventTest {
   @Test
   public void getCostPerPerson_returnsCostPPWithFood_Double(){
     Event testEvent = new Event (1,"apps","NA","none");
-    Double baseCost = 5.00 + 3.00;
-    Double expected = baseCost * testEvent.getNumPeople();
+    Double expected = 5.00 + 3.00;
     assertEquals(expected, testEvent.getCostPerPerson());
   }
   @Test
   public void getCostPerPerson_returnsCostPPWithFoodAndBev_Double(){
     Event testEvent = new Event (1,"apps","wine","none");
-    Double baseCost = 5.00 + 3.00 + 10.00;
-    Double expected = baseCost * testEvent.getNumPeople();
+    Double expected = 5.00 + 3.00 + 10.00;
     assertEquals(expected, testEvent.getCostPerPerson());
   }
-
+  @Test
+  public void getTotalCost_returnsCostPPPlusEntertainmentOption_Double(){
+    Event testEvent = new Event ( 50,"apps","wine" ,"DJ");
+    double sub = 5.00 + 3.00 + 10.00 ;
+    Double expected = sub * testEvent.getNumPeople() + 300.00;
+    assertEquals(expected, testEvent.getTotalCost());
+  }
 }

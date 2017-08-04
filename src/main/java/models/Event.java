@@ -51,9 +51,16 @@ public class Event {
     return baseCostpp * getNumPeople();
   }
   public Double getTotalCost (){
-    double total;
-    total = 0.00;
-   return  total;
+    double subTotal;
+    //entertainmentOptions = {"none","DJ","live-band","harpist","magician"};
+    Map<String, Double> EntertainmentCostSheet = new HashMap();
+    EntertainmentCostSheet.put("none", 0.00);
+    EntertainmentCostSheet.put("DJ", 0.00);
+    EntertainmentCostSheet.put("live-band", 0.00);
+    EntertainmentCostSheet.put("harpist", 0.00);
+    EntertainmentCostSheet.put("magician", 0.00);
+    subTotal = getCostPerPerson() * getNumPeople() + EntertainmentCostSheet.get(entertainmentChoice) ;
+   return  subTotal;
   }
 
 
