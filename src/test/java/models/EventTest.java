@@ -36,12 +36,19 @@ public class EventTest {
     assertEquals(expected, testEvent.getEntertainmentChoice());
   }
   @Test
+  public void newTest_getsFoodOptions_Array() throws Exception{
+    Event testEvent = new Event(50, "apps", "nonalcoholic", "none");
+    String expected = "none";
+    assertEquals(expected, testEvent.getEntertainmentChoice());
+  }
+  @Test
   public void newTest_getsCostSheet() throws Exception{
     Event testEvent = new Event(50, "dessert-only", "cocktails", "none");
+    EventMenu testEventMenu = new EventMenu();
     Double expectedfood = 8.00;
     Double expectedbev = 15.00;
-    assertEquals(expectedfood, testEvent.getCostSheet().get(testEvent.getFoodChoice()));
-    assertEquals(expectedbev, testEvent.getCostSheet().get(testEvent.getBeverageChoice()));
+    assertEquals(expectedfood, testEventMenu.getCostSheet().get(testEvent.getFoodChoice()));
+    assertEquals(expectedbev, testEventMenu.getCostSheet().get(testEvent.getBeverageChoice()));
   }
   @Test
   public void getCostPerPerson_returnsBaseCostPP_Double(){
