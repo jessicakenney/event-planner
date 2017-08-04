@@ -1,5 +1,8 @@
 package models;
 
+import java.util.HashMap;
+import java.util.Map;
+
 public class Event {
   private Integer numPeople;
   private String foodChoice;
@@ -26,9 +29,17 @@ public class Event {
     return entertainmentChoice;
   }
   public Double getCostPerPerson (){
-    double baseCost;
-    baseCost = 5.00;
-    return baseCost * getNumPeople();
+    double baseCostpp;
+    //foodOptions {"apps","brunch","dessert-only","dinner:buffet","dinner:sit-down"};
+    //Determine base cost on food and beverage options
+    baseCostpp = 5.00;
+    Map<String, Double> costSheet = new HashMap();
+    costSheet.put("apps", 0.00);
+    costSheet.put("brunch", 5.00);
+    costSheet.put("NA", 0.00);
+    baseCostpp += costSheet.get(foodChoice);
+
+    return baseCostpp * getNumPeople();
   }
   public Double getTotalCost (){
     double total;

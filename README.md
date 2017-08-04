@@ -15,9 +15,9 @@ information, an estimate will be calculated.
 | Behavior      | Input | Output |
 | ------------- | ------------- | ------------- |
 | determine cost for number of people | 50 | 250 |
-| determine cost for number of people + light snacks  |  [50,light snacks]| 400 |
-| determine cost for number of people,light snacks,nonalcoholic |[50,light snacks, nonalcoholic] | 450 |
-| determine cost for number of people,light snacks,nonalcoholic with coupon |[50,light snacks, nonalcoholic] | 360 |
+| determine cost for number of people + light snacks  |  [50,apps]| 400 |
+| determine cost for number of people,light snacks,nonalcoholic |[50,apps, nonalcoholic] | 450 |
+| determine cost for number of people,light snacks,nonalcoholic with coupon |[50,apps, nonalcoholic] | 360 |
 
 ## Setup
 git clone 
