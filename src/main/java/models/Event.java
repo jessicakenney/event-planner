@@ -64,16 +64,16 @@ public class Event {
   }
   public Double applyCouponCode(String couponCode) {
    double total = getTotalCost();
-   double discountedTotal = 0;
-//   if (couponCode.equals( "20percentOff")) {
-//     discountedTotal =  total - (total * .20);
-//   } else if (couponCode.equals("freeDJ")) {
-//     discountedTotal = total - 300.00;
-//   } else if (couponCode.equals("NA")) {
-//     discountedTotal = total;
-//   } else {
-//     discountedTotal = total;
-//   }
+   double discountedTotal;
+   if (couponCode.equals( "20percentOff")) {
+     discountedTotal =  total - (total * .20);
+   } else if (couponCode.equals("freeDJ")) {
+     discountedTotal = total - 300.00;
+   } else if (couponCode.equals("NA")) {
+     discountedTotal = total;
+   } else {
+     discountedTotal = total;
+   }
    return discountedTotal;
   }
 
