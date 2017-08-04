@@ -12,6 +12,17 @@ public class EventTest {
     assertEquals(true, testEvent instanceof Event);
   }
   @Test
+  public void newEventMenu_instantiatesCorrectly() throws Exception {
+    EventMenu testEventMenu = new EventMenu();
+    assertEquals(true, testEventMenu instanceof EventMenu);
+  }
+  @Test
+  public void newEventMenu_getsFoodOptions_String() throws Exception {
+    EventMenu testEventMenu = new EventMenu();
+    String actual[] = testEventMenu.getBeverageOptions();
+    assertEquals("dinner:buffet", actual[2]);
+  }
+  @Test
   public void newTest_getsNumPeople_Integer() throws Exception{
     Event testEvent = new Event(50, "apps", "nonalcoholic", "none");
     Integer expected = 50;
