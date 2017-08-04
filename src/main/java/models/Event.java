@@ -4,11 +4,14 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class Event {
+  private String[] foodOptions = {"apps","brunch","dessert-only","dinner:buffet","dinner:sit-down"};
+  private String[] beverageOptions = {"nonalcoholic","wine","beer","cocktails"};
+  private String[] entertainmentOptions = {"none","DJ","live-band","harpist","magician"};
+  private Map<String, Double> costSheet = new HashMap();
   private Integer numPeople;
   private String foodChoice;
   private String beverageChoice;
   private String entertainmentChoice;
-  private Map<String, Double> costSheet = new HashMap();
 
   public Event( Integer numPeople, String foodChoice, String beverageChoice, String entertainmentChoice){
     this.numPeople = numPeople;
@@ -35,6 +38,15 @@ public class Event {
     return costSheet;
   }
 
+  public String[] getFoodOptions () {
+    return foodOptions;
+  }
+  public String[] getBeverageOptions () {
+    return beverageOptions;
+  }
+  public String[] getEntertainmentOptions () {
+    return entertainmentOptions;
+  }
   public Integer getNumPeople () {
     return numPeople;
   }
@@ -49,8 +61,6 @@ public class Event {
   }
   public Double getCostPerPerson (){
     Double baseCostpp;
-    //foodOptions {"apps","brunch","dessert-only","dinner:buffet","dinner:sit-down"};
-    //beverageOptions = {"nonalcoholic","wine","beer","cocktails"};
     //Determine base cost on food and beverage options
     baseCostpp = 5.00;
     baseCostpp += getCostSheet().get(foodChoice);
@@ -60,7 +70,6 @@ public class Event {
   }
   public Double getTotalCost (){
     Double subTotal;
-    //entertainmentOptions = {"none","DJ","live-band","harpist","magician"};
     subTotal =  getCostPerPerson() * getNumPeople() + getCostSheet().get(entertainmentChoice) ;
    return  subTotal;
   }
