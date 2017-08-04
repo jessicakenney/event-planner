@@ -35,5 +35,12 @@ public class EventTest {
     String expected = "none";
     assertEquals(expected, testEvent.getEntertainmentChoice());
   }
+  @Test
+  public void getCostPerPerson_returnsBaseCostPP_Double(){
+    Event testEvent = new Event(50, "lightsnacks", "nonalcoholic", "none");
+    Double baseCost = 5.00;
+    Double expected = baseCost * testEvent.getNumPeople();
+    assertEquals(expected, testEvent.getCostPerPerson());
+  }
 
 }

@@ -25,6 +25,16 @@ public class Event {
   public String getEntertainmentChoice () {
     return entertainmentChoice;
   }
+  public Double getCostPerPerson (){
+    double baseCost;
+    baseCost = 0.00;
+    return baseCost * getNumPeople();
+  }
+  public Double getTotalCost (){
+    double total;
+    total = 0.00;
+   return  total;
+  }
 
 
 }
