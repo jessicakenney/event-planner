@@ -61,4 +61,13 @@ public class EventTest {
     Double expected = sub * testEvent.getNumPeople() + 300.00;
     assertEquals(expected, testEvent.getTotalCost());
   }
+  @Test
+  public void getTotalCost_returnsNewCostWithCoupon_Double(){
+    Event testEvent = new Event ( 50,"apps","wine" ,"DJ");
+    Double sub = 5.00 + 3.00 + 10.00 ;
+    Double total = sub * testEvent.getNumPeople() + 300.00;
+    Double discount = total * .20;
+    Double expected = total - discount;
+    assertEquals(expected, testEvent.applyCouponCode("20percentOff"));
+  }
 }

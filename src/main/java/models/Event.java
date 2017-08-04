@@ -29,7 +29,7 @@ public class Event {
     return entertainmentChoice;
   }
   public Double getCostPerPerson (){
-    double baseCostpp;
+    Double baseCostpp;
     //foodOptions {"apps","brunch","dessert-only","dinner:buffet","dinner:sit-down"};
     //beverageOptions = {"nonalcoholic","wine","beer","cocktails"};
     //Determine base cost on food and beverage options
@@ -51,7 +51,7 @@ public class Event {
     return baseCostpp;
   }
   public Double getTotalCost (){
-    double subTotal;
+    Double subTotal;
     //entertainmentOptions = {"none","DJ","live-band","harpist","magician"};
     Map<String, Double> EntertainmentCostSheet = new HashMap();
     EntertainmentCostSheet.put("none", 0.00);
@@ -62,6 +62,19 @@ public class Event {
     subTotal =  getCostPerPerson() * getNumPeople() + EntertainmentCostSheet.get(entertainmentChoice) ;
    return  subTotal;
   }
-
+  public Double applyCouponCode(String couponCode) {
+   double total = getTotalCost();
+   double discountedTotal = 0;
+//   if (couponCode.equals( "20percentOff")) {
+//     discountedTotal =  total - (total * .20);
+//   } else if (couponCode.equals("freeDJ")) {
+//     discountedTotal = total - 300.00;
+//   } else if (couponCode.equals("NA")) {
+//     discountedTotal = total;
+//   } else {
+//     discountedTotal = total;
+//   }
+   return discountedTotal;
+  }
 
 }
