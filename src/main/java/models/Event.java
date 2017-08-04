@@ -48,18 +48,18 @@ public class Event {
     baseCostpp += costSheet.get(foodChoice);
     baseCostpp += costSheet.get(beverageChoice);
 
-    return baseCostpp * getNumPeople();
+    return baseCostpp;
   }
   public Double getTotalCost (){
     double subTotal;
     //entertainmentOptions = {"none","DJ","live-band","harpist","magician"};
     Map<String, Double> EntertainmentCostSheet = new HashMap();
     EntertainmentCostSheet.put("none", 0.00);
-    EntertainmentCostSheet.put("DJ", 0.00);
-    EntertainmentCostSheet.put("live-band", 0.00);
-    EntertainmentCostSheet.put("harpist", 0.00);
-    EntertainmentCostSheet.put("magician", 0.00);
-    subTotal = getCostPerPerson() * getNumPeople() + EntertainmentCostSheet.get(entertainmentChoice) ;
+    EntertainmentCostSheet.put("DJ", 300.00);
+    EntertainmentCostSheet.put("live-band", 500.00);
+    EntertainmentCostSheet.put("harpist", 275.00);
+    EntertainmentCostSheet.put("magician", 250.00);
+    subTotal =  getCostPerPerson() * getNumPeople() + EntertainmentCostSheet.get(entertainmentChoice) ;
    return  subTotal;
   }
 
