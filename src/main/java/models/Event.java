@@ -1,21 +1,22 @@
 package models;
 
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 public class Event {
   //private Map<String, Double> costSheet = new HashMap();
   private Integer numPeople;
   private String foodChoice;
-  private String beverageChoice;
+  private String[] beverageChoices;
   private String entertainmentChoice;
   private EventMenu theEventMenu = new EventMenu();
 
 
-  public Event( Integer numPeople, String foodChoice, String beverageChoice, String entertainmentChoice){
+  public Event( Integer numPeople, String foodChoice, String[] beverageChoices, String entertainmentChoice){
     this.numPeople = numPeople;
     this.foodChoice = foodChoice;
-    this.beverageChoice = beverageChoice;
+    this.beverageChoices = beverageChoices;
     this.entertainmentChoice = entertainmentChoice;
   }
 
@@ -25,8 +26,8 @@ public class Event {
   public String getFoodChoice () {
     return foodChoice;
   }
-  public String getBeverageChoice () {
-    return beverageChoice;
+  public String[] getBeverageChoices () {
+    return beverageChoices;
   }
   public String getEntertainmentChoice () {
     return entertainmentChoice;
@@ -36,7 +37,9 @@ public class Event {
     //Determine base cost on food and beverage options
     baseCostpp = 5.00;
     baseCostpp += theEventMenu.getCostSheet().get(foodChoice);
-    baseCostpp += theEventMenu.getCostSheet().get(beverageChoice);
+    for ( String beverage : beverageChoices) {
+      baseCostpp += theEventMenu.getCostSheet().get(beverage);
+    }
 
     return baseCostpp;
   }
