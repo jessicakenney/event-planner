@@ -14,16 +14,16 @@ public class Event {
   }
 
   public Integer getNumPeople () {
-    return 0;
+    return numPeople;
   }
   public String getFoodChoice () {
-    return "";
+    return foodChoice;
   }
   public String getBeverageChoice () {
-    return "";
+    return beverageChoice;
   }
   public String getEntertainmentChoice () {
-    return "";
+    return entertainmentChoice;
   }
 
 
