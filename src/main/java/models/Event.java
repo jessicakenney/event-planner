@@ -51,7 +51,7 @@ public class Event {
    if (couponCode.equals( "20percentOff")) {
      discountedTotal =  total - (total * .20);
    } else if (couponCode.equals("freeDJ") && getEntertainmentChoice().equals("DJ")) {
-     discountedTotal = total - 300.00;
+     discountedTotal = total - theEventMenu.getCostSheet().get("DJ");
    } else if (couponCode.equals("NA")) {
      discountedTotal = total;
    } else {
