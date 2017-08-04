@@ -27,7 +27,7 @@ public class Event {
   }
   public Double getCostPerPerson (){
     double baseCost;
-    baseCost = 0.00;
+    baseCost = 5.00;
     return baseCost * getNumPeople();
   }
   public Double getTotalCost (){
