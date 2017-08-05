@@ -1,14 +1,18 @@
-# Memory Game
+# Event Planner
 
-##### Epicodus Section: Intro to Programming Group Project
+##### Epicodus Section: Java Week1: Behavior Driven Development 
 
-### By Kimberly Lu, Jessica Sheridan, Shyamal Punekar, Beth Hansen
+### By Jessica Sheridan
 
 ## Description
 
 This application is an event planner estimate for party planning services. A user will be
 prompted about several questions about a party they are interested in having. Based on this
-information, an estimate will be calculated. 
+information, an estimate will be calculated. The options for the Event are defined in the
+EventMenu class. The EventMenu class includes all the user options for the Event including
+food, beverage, and entertainment. A corresponding costSheet provides cost for each item.
+The Event class uses the costs outlined in the EventMenu to calculate the cost per person for
+the event and the grand total less any valid coupon codes.
 
 ## Specifications:
 
@@ -17,10 +21,12 @@ information, an estimate will be calculated.
 | determine cost for number of people | 50 | 250 |
 | determine cost for number of people + light snacks  |  [50,apps]| 400 |
 | determine cost for number of people,light snacks,nonalcoholic |[50,apps, nonalcoholic] | 450 |
-| determine cost for number of people,light snacks,nonalcoholic with coupon |[50,apps, nonalcoholic] | 360 |
+| determine cost with entertainment included |[50,apps,wine,DJ] | 1200 |
+| determine cost with 20% discount coupon |[50,apps,wine,DJ,20%off] |  |
+| determine cost with free DJ coupon |[50,apps,wine,DJ,freeDJ] |  |
 
 ## Setup
-git clone 
+git clone https://github.com/jessicakenney/event-planner.git  
 
 ## Support and Contact details
 email with any questions: jessicakenney@yahoo.com,
