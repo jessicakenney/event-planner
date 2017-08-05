@@ -31,14 +31,17 @@ public class App {
           inputFoodChoice = bufferedReader.readLine();
           validInput = Arrays.asList(newEventMenu.getFoodOptions()).contains(inputFoodChoice);
         }
-        System.out.println("\nEnter your beverage selection(s) for the event : option1,option2 ");
+
+
+        System.out.println("\nEnter your beverage selection(s) for the event [option1,option2]: ");
+        //show the offerings
         for (String item : newEventMenu.getBeverageOptions()) {
-          String optionString = String.format("   * %s", item);
-          System.out.println(optionString);
+          System.out.println(String.format("   * %s", item));
         }
         String inputBeverageChoicesString = bufferedReader.readLine();
         String [] inputBeverageChoicesSplit = inputBeverageChoicesString.split(",");
         boolean valid;
+        //for each bev inputted
         for (String bev: inputBeverageChoicesSplit) {
           valid = Arrays.asList(newEventMenu.getBeverageOptions()).contains(bev);
           //one False should turn this off
@@ -48,11 +51,14 @@ public class App {
           System.out.println("\nInvalid Choice. Try again.");
           inputBeverageChoicesString = bufferedReader.readLine();
           inputBeverageChoicesSplit = inputBeverageChoicesString.split(",");
+          validInput = true;
           for (String bev: inputBeverageChoicesSplit) {
             valid = Arrays.asList(newEventMenu.getBeverageOptions()).contains(bev);
             validInput = valid && validInput;
           }
         }
+
+
         System.out.println("\nEnter your entertainment selection for the event : ");
         for (String item : newEventMenu.getEntertainmentOptions()) {
           String optionString = String.format("   * %s", item);
@@ -69,7 +75,7 @@ public class App {
         System.out.println("\n==========Event Summary==========");
         System.out.println(String.format("Number of People\t\t:%d people", inputNumPeople));
         System.out.println(String.format("Food Choice\t\t\t\t:%s", inputFoodChoice));
-        System.out.println(String.format("Beverage Choices\t\t\t:%s", inputBeverageChoicesString));
+        System.out.println(String.format("Beverage Choices\t\t:%s", inputBeverageChoicesString));
         System.out.println(String.format("Entertainment Choice\t:%s", inputEntertainmentChoice));
         System.out.println("=================================");
         System.out.println(String.format("CostPerPerson\t\t\t:$%.2f", newEvent.getCostPerPerson()));
@@ -77,7 +83,7 @@ public class App {
         System.out.println(".................................");
         System.out.println(String.format("SubTotal\t\t\t\t:$%.2f", newEvent.getTotalCost()));
         System.out.println("=================================");
-        System.out.println("\nEnter valid couponCode[20percentOff,freeDJ]:");
+        System.out.println("\nEnter valid couponCode[20percentOff,freeDJ,na]:");
         String couponCode = bufferedReader.readLine();
         System.out.println("\n=================================");
         System.out.println(String.format("Total with discount\t\t:$%.2f", newEvent.applyCouponCode(couponCode)));
