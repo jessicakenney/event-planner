@@ -95,6 +95,13 @@ public class EventTest {
     assertEquals(expected, testEvent.getCostPerPerson());
   }
   @Test
+  public void getCostPerPerson_returnsCostPPWithFoodAndTwoBevs_Double(){
+    String[] bevs = {"wine","beer"};
+    Event testEvent = new Event (1,"apps",bevs,"none");
+    Double expected = 5.00 + 3.00 + 10.00 + 8.00;
+    assertEquals(expected, testEvent.getCostPerPerson());
+  }
+  @Test
   public void getTotalCost_returnsCostPPPlusEntertainmentOption_Double(){
     String[] bevs = {"wine"};
     Event testEvent = new Event ( 50,"apps",bevs ,"DJ");

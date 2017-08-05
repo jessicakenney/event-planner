@@ -7,11 +7,11 @@
 ## Description
 
 This application is an event planner estimate for party planning services. A user will be
-prompted about several questions about a party they are interested in having. Based on this
+prompted with several questions about a party they are interested in having. Based on this
 information, an estimate will be calculated. The options for the Event are defined in the
 EventMenu class. The EventMenu class includes all the user options for the Event including
-food, beverage, and entertainment. A corresponding costSheet provides cost for each item.
-The Event class uses the costs outlined in the EventMenu to calculate the cost per person for
+food, beverage, and entertainment. A corresponding costSheet in the EventMenu provides cost 
+for each item. The Event class uses the costs outlined in the EventMenu to calculate the cost per person for
 the event and the grand total less any valid coupon codes.
 
 ## Specifications:
