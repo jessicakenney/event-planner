@@ -3,16 +3,14 @@ package models;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.List;
 
 public class App {
 
   public static void main(String[] args) {
     EventMenu newEventMenu = new EventMenu();
     BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
-    System.out.println("Let's Plan a Party!");
+    System.out.println("\nLet's Plan a Party!");
     boolean partyPlanning = true;
     while (partyPlanning) {
       System.out.println("\n==========Event Planner Cost Estimator==========");
@@ -31,20 +29,15 @@ public class App {
           inputFoodChoice = bufferedReader.readLine();
           validInput = Arrays.asList(newEventMenu.getFoodOptions()).contains(inputFoodChoice);
         }
-
-
         System.out.println("\nEnter your beverage selection(s) for the event [option1,option2]: ");
-        //show the offerings
         for (String item : newEventMenu.getBeverageOptions()) {
           System.out.println(String.format("   * %s", item));
         }
         String inputBeverageChoicesString = bufferedReader.readLine();
         String [] inputBeverageChoicesSplit = inputBeverageChoicesString.split(",");
         boolean valid;
-        //for each bev inputted
         for (String bev: inputBeverageChoicesSplit) {
           valid = Arrays.asList(newEventMenu.getBeverageOptions()).contains(bev);
-          //one False should turn this off
           validInput = valid && validInput;
         }
         while (!validInput) {
@@ -57,8 +50,6 @@ public class App {
             validInput = valid && validInput;
           }
         }
-
-
         System.out.println("\nEnter your entertainment selection for the event : ");
         for (String item : newEventMenu.getEntertainmentOptions()) {
           String optionString = String.format("   * %s", item);
@@ -88,7 +79,6 @@ public class App {
         System.out.println("\n=================================");
         System.out.println(String.format("Total with discount\t\t:$%.2f", newEvent.applyCouponCode(couponCode)));
         System.out.println("=================================");
-
         System.out.println("Would you like to try again [y/n]?");
         partyPlanning = bufferedReader.readLine().equalsIgnoreCase("y");
       } catch (IOException e) {

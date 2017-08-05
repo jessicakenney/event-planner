@@ -1,13 +1,10 @@
 package models;
 
 import org.junit.Test;
-
-import java.util.List;
-
 import static org.junit.Assert.*;
 
-public class EventTest {
 
+public class EventTest {
   @Test
   public void newEvent_instantiatesCorrectly() throws Exception {
     String[] bevs = {"nonalcoholic"};

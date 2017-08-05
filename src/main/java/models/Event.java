@@ -1,17 +1,11 @@
 package models;
 
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-
 public class Event {
-  //private Map<String, Double> costSheet = new HashMap();
   private Integer numPeople;
   private String foodChoice;
   private String[] beverageChoices;
   private String entertainmentChoice;
   private EventMenu theEventMenu = new EventMenu();
-
 
   public Event( Integer numPeople, String foodChoice, String[] beverageChoices, String entertainmentChoice){
     this.numPeople = numPeople;
@@ -32,15 +26,14 @@ public class Event {
   public String getEntertainmentChoice () {
     return entertainmentChoice;
   }
+
   public Double getCostPerPerson (){
     Double baseCostpp;
-    //Determine base cost on food and beverage options
     baseCostpp = 5.00;
     baseCostpp += theEventMenu.getCostSheet().get(foodChoice);
     for ( String beverage : beverageChoices) {
       baseCostpp += theEventMenu.getCostSheet().get(beverage);
     }
-
     return baseCostpp;
   }
   public Double getTotalCost (){
